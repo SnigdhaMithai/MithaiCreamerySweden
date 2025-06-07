@@ -9,131 +9,128 @@
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
-      background-color: #fae7b5;
-      color: #3a2c2c;
+      background-color: #fef1cc;
+      color: #3b241f;
     }
     header {
-      background-color: #d2643c;
-      padding: 3rem 1rem 2rem;
       text-align: center;
+      padding: 2rem 1rem 1rem;
     }
     header img {
-      max-width: 100px;
-      margin-bottom: 1.2rem;
+      max-width: 80px;
+      display: block;
+      margin: 0 auto 1rem;
     }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2rem;
       margin: 0.2rem 0;
-      color: #fff3df;
     }
     header p {
       font-size: 1.2rem;
-      color: #fff3df;
+      font-style: italic;
+      color: #3b241f;
+      margin: 0.5rem 0 1.5rem;
     }
-    section {
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h2 {
-      font-size: 1.9rem;
-      margin-bottom: 1rem;
-      color: #3a2c2c;
+    nav {
       text-align: center;
+      margin-bottom: 2rem;
     }
-    .flavors, .blog-entry, .contact-info {
-      margin-bottom: 2.5rem;
-    }
-    .flavors-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-    .flavor {
-      background-color: #f8bc7e;
-      padding: 1.2rem 2rem;
-      border-radius: 6px;
-      font-weight: bold;
-      color: #3a2c2c;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-    }
-    .blog-entry {
-      background-color: #fff3e0;
-      padding: 1.5rem;
-      border-radius: 6px;
-    }
-    .blog-entry img {
-      width: 100%;
-      border-radius: 6px;
-      margin-top: 1rem;
-    }
-    .contact-info p, .blog-entry p {
-      line-height: 1.7;
-      text-align: center;
-    }
-    footer {
-      background-color: #d2643c;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-    a {
-      color: #3a2c2c;
+    nav a {
+      margin: 0 1rem;
+      font-size: 1rem;
+      color: #3b241f;
       text-decoration: none;
     }
-    a:hover {
+    nav a:hover {
       text-decoration: underline;
+    }
+    .flavor-images {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      padding: 0 2rem;
+      margin-bottom: 2rem;
+    }
+    .flavor-images img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    section {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      padding: 0 1.5rem;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    .update-box {
+      background-color: #fff6e7;
+      border: 1px solid #3b241f;
+      border-radius: 8px;
+      padding: 1.2rem;
+    }
+    .update-box h3 {
+      margin-top: 0;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 0.95rem;
+      margin: 2rem 0 0.5rem;
+    }
+    .instagram-icon {
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
   <header>
     <img src="MITHAI_CIRCULAR LOGO.png" alt="Mithai Creamery Logo">
-    <h1>MITHAI<br><small style="font-weight: normal; font-size: 1.2rem;">creamery</small></h1>
-    <p>Indian soul with a global scoop</p>
+    <h1>Indian soul with a global scoop</h1>
+    <nav>
+      <a href="#">Flavors</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
   </header>
 
-  <section class="about">
-    <h2>About Us</h2>
-    <p style="text-align:center">We are a small-batch artisanal ice cream brand in Stockholm, blending traditional Indian flavors with high-quality ingredients to create unique, delectable treats.</p>
-  </section>
+  <div class="flavor-images">
+    <img src="cone1.jpg" alt="Vanilla Cone">
+    <img src="cone2.jpg" alt="Mango Cone">
+    <img src="bowl1.jpg" alt="Berry Ice Cream">
+    <img src="bowl2.jpg" alt="Double Scoop">
+  </div>
 
-  <section class="flavors">
-    <h2>Signature Flavors</h2>
-    <div class="flavors-grid">
-      <div class="flavor">Nolen Gur Ice Cream</div>
-      <div class="flavor">Coconut & Mango</div>
-      <div class="flavor">Toasted Gobindo Bhog</div>
-      <div class="flavor">Gondhoraj Lebu Sorbet</div>
+  <section>
+    <h2>Latest Updates</h2>
+    <div class="update-box">
+      <h3>Soft Launch in Tyresö</h3>
+      <p>A private party at Tyresö with a 30 party attended the first three flavors launch.</p>
+      <ul>
+        <li>Gondhoraj lebu sorbet</li>
+        <li>Toasted gobindho bhog</li>
+        <li>Nolen gur ice cream</li>
+      </ul>
     </div>
   </section>
 
-  <section class="blog-entry">
-    <h2>From the Creamery</h2>
-    <h3>Soft Launch at Tyresö</h3>
-    <p>30+ guests sampled our debut flavors at an intimate gathering:</p>
-    <ul>
-      <li>Gondhoraj Lebu Sorbet</li>
-      <li>Toasted Gobindo Bhog</li>
-      <li>Nolen Gur Ice Cream</li>
-    </ul>
-    <img src="ice creams 1.jpg" alt="Soft Launch Tasting">
-  </section>
-
-  <section class="contact-info">
+  <section>
     <h2>Where to Find Us</h2>
-    <p>Order our ice cream at pop-up events in Stockholm or book us for private catering.</p>
+    <p style="text-align: center;">We’ll be at pop-up events in Stockholm or available for private catering.</p>
   </section>
 
-  <section class="contact-info">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:hello@mithaicreamery.com">hello@mithaicreamery.com</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/mithai_creamery" target="_blank">@mithai_creamery</a></p>
-  </section>
+  <div class="instagram-icon">
+    <a href="https://www.instagram.com/mithai_creamery" target="_blank">📷 Instagram</a>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Mithai Creamery. All rights reserved.</p>
-  </footer>
+  <div class="footer-note">
+    &copy; 2025 Mithai Creamery. All rights reserved.
+  </div>
 </body>
 </html>
