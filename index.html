@@ -44,17 +44,32 @@
     nav a:hover {
       text-decoration: underline;
     }
-    .flavor-images {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      padding: 0 2rem;
-      margin-bottom: 2rem;
+    /* Carousel Styles */
+    #meet-us .carousel {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      overflow: hidden;
+      border-radius: 8px;
     }
-    .flavor-images img {
+    #meet-us .slide {
+      display: none;
       width: 100%;
-      border-radius: 10px;
     }
+    #meet-us .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.3);
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      padding: 0.5rem;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    #meet-us .prev { left: 10px; }
+    #meet-us .next { right: 10px; }
     section {
       max-width: 700px;
       margin: 0 auto 2rem;
@@ -64,6 +79,14 @@
       text-align: center;
       font-size: 1.6rem;
       margin-bottom: 1rem;
+      color: #3b241f;
+    }
+    /* Menu section */
+    #menu img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     .update-box {
       background-color: #fff6e7;
@@ -71,11 +94,11 @@
       border-radius: 8px;
       padding: 1.2rem;
     }
-    .update-box h3 {
-      margin-top: 0;
-    }
+    .update-box h3 { margin-top: 0; }
     ul {
       padding-left: 1.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0;
     }
     .footer-note {
       text-align: center;
@@ -94,24 +117,42 @@
     <img src="MITHAI_CIRCULAR LOGO.png" alt="Mithai Creamery Logo">
     <h1>Indian soul with a global scoop</h1>
     <nav>
-      <a href="#">Flavors</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="#flavors">Flavors</a>
+      <a href="#meet-us">Meet Us</a>
+      <a href="#menu">Menu</a>
+      <a href="#updates">Updates</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <div class="flavor-images">
-    <img src="cone1.jpg" alt="Vanilla Cone">
-    <img src="cone2.jpg" alt="Mango Cone">
-    <img src="bowl1.jpg" alt="Berry Ice Cream">
-    <img src="bowl2.jpg" alt="Double Scoop">
-  </div>
+  <!-- Flavors could remain separate or removed, placeholder -->
 
-  <section>
+  <!-- Meet Us Carousel -->
+  <section id="meet-us">
+    <h2>Meet Us</h2>
+    <div class="carousel">
+      <button class="carousel-button prev">&#10094;</button>
+      <button class="carousel-button next">&#10095;</button>
+      <img class="slide" src="image1.jpg" alt="Meet Us Image 1">
+      <img class="slide" src="image2.jpg" alt="Meet Us Image 2">
+      <img class="slide" src="image3.jpg" alt="Meet Us Image 3">
+      <img class="slide" src="image4.jpg" alt="Meet Us Image 4">
+      <img class="slide" src="image5.jpg" alt="Meet Us Image 5">
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <h2>Special Seasonal Menu</h2>
+    <img src="Menu.jpg" alt="Mithai Creamery Seasonal Menu">
+  </section>
+
+  <!-- Latest Updates -->
+  <section id="updates">
     <h2>Latest Updates</h2>
     <div class="update-box">
       <h3>Soft Launch in Tyresö</h3>
-      <p>A private party at Tyresö with a 30 party attended the first three flavors launch.</p>
+      <p>A private party at Tyresö with over 30 guests who sampled our debut flavors.</p>
       <ul>
         <li>Gondhoraj lebu sorbet</li>
         <li>Toasted gobindho bhog</li>
@@ -120,17 +161,41 @@
     </div>
   </section>
 
-  <section>
+  <!-- Where to Find Us -->
+  <section id="contact">
     <h2>Where to Find Us</h2>
-    <p style="text-align: center;">We’ll be at pop-up events in Stockholm or available for private catering.</p>
+    <p style="text-align: center;">Order our ice cream at pop-up events in Stockholm or book us for private catering.</p>
+    <div class="instagram-icon">
+      <a href="https://www.instagram.com/mithai_creamery" target="_blank">📷 @mithai_creamery</a>
+    </div>
+    <div class="footer-note">
+      &copy; 2025 Mithai Creamery. All rights reserved.
+    </div>
   </section>
 
-  <div class="instagram-icon">
-    <a href="https://www.instagram.com/mithai_creamery" target="_blank">📷 Instagram</a>
-  </div>
-
-  <div class="footer-note">
-    &copy; 2025 Mithai Creamery. All rights reserved.
-  </div>
+  <script>
+    // Carousel functionality
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('#meet-us .slide');
+    const prevBtn = document.querySelector('#meet-us .prev');
+    const nextBtn = document.querySelector('#meet-us .next');
+    function showSlide(n) {
+      slides.forEach((slide, i) => {
+        slide.style.display = (i === n) ? 'block' : 'none';
+      });
+    }
+    function nextSlide() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+    }
+    function prevSlide() {
+      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    showSlide(slideIndex);
+    setInterval(nextSlide, 5000);
+  </script>
 </body>
 </html>
